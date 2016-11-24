@@ -63,19 +63,26 @@ function draw() {
     pic1.render();
   } else if (instance == 1) {
     whiteRect();
+    ReturnButton();
   } else if (instance == 2) {
     whiteRect();
+    ReturnButton();
     console.log("scenario 2");
   } else if (instance == 3) {
     whiteRect();
+    ReturnButton();
     console.log("scenario 3");
   } else if (instance == 4){
     whiteRect();
-
+    ReturnButton();
     //several pictures, not just one
     d1 = desk1.get(0, 0, desk1.width, desk1.height);
     var desk100 = new Img(d1, 0, 0);
     desk100.render();
+
+    d2 = desk2.get(0, 0, desk2.width, desk2.height);
+    var desk200 = new Img(d2, resizeA + 10, 0);
+    desk200.render();
     // console.log("scenario 4");
   } else if (instance == 5) {
     whiteRect();
@@ -105,6 +112,9 @@ function mousePressed() {
   } else if (abs(dist(mouseX, mouseY, 200, 200)) <= (resize/2)) {
     instance = 1;
     console.log(instance);
+  } else if (abs(dist(mouseX, mouseY, width/2, height/2)) <= (50)) {
+    instance = 0;
+    console.log(instance);
   }
 }
 
@@ -127,8 +137,12 @@ function whiteRect() {
   pop();
 }
 
+//will be replaced with a nice icon or text
 function ReturnButton() {
   push();
+  rectMode(CENTER);
+  fill(100,0,100);
+  rect(width/2, height/2, 50, 50);
   pop();
 }
 
