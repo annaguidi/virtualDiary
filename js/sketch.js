@@ -2,6 +2,15 @@ var photo;
 var desk1;
 var desk2;
 var desk3;
+var desk4;
+var food1;
+var food2;
+var felix1;
+var felix2;
+var campus1;
+var campus2;
+var campus3;
+var campus4;
 var deskIcon;
 var felixIcon;
 var lunchIcon;
@@ -22,7 +31,22 @@ function preload() {
   desk1 = loadImage("assets/20161119_001531.jpg");
   desk2 = loadImage("assets/20161119_114337.jpg");
   desk3 = loadImage("assets/20161122_125345.jpg");
+  desk4 = loadImage("assets/20161118_001612.jpg");
 
+  food1 = loadImage("assets/20161121_115735.jpg");
+  food2 = loadImage("assets/20161121_205016.jpg");
+
+  felix1 = loadImage("assets/20161119_122413.jpg");
+  felix2 = loadImage("assets/20161122_153336.jpg");
+
+  campus1 = loadImage("assets/20161116_124905.jpg");
+  campus2 = loadImage("assets/20161115_105544.jpg");
+  campus3 = loadImage("assets/20161115_105607.jpg");
+  campus4 = loadImage("assets/20161114_130343.jpg");
+  campus5 = loadImage("assets/20161113_153944.jpg");
+  campus6 = loadImage("assets/20161113_153856.jpg");
+  campus7 = loadImage("assets/20161108_152951.jpg");
+  campus8 = loadImage("assets/20161107_163306.jpg");
   // for (var i = 0; i < easerCount; i++) {
   //   var e = new Easer(width / 2, height / 2, diameter, easing);
   //   easer.push(e);
@@ -33,6 +57,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(255);
+
   photo.resize(resize, resize);
   felixIcon.resize(resize, resize);
   lunchIcon.resize(resize, resize);
@@ -40,6 +65,19 @@ function setup() {
   desk1.resize(resizeA, resizeB);
   desk2.resize(resizeA, resizeB);
   desk3.resize(resizeA, resizeB);
+  desk4.resize(resizeA, resizeB);
+  food1.resize(resizeA, resizeB);
+  food2.resize(resizeA, resizeB);
+  felix1.resize(resizeA, resizeB);
+  felix2.resize(resizeA, resizeB);
+  campus1.resize(resizeA, resizeB);
+  campus2.resize(resizeA, resizeB);
+  campus3.resize(resizeA, resizeB);
+  campus4.resize(resizeA, resizeB);
+  campus5.resize(resizeA, resizeB);
+  campus6.resize(resizeA, resizeB);
+  campus7.resize(resizeA, resizeB);
+  campus8.resize(resizeA, resizeB);
 }
 
 function draw() {
@@ -63,18 +101,66 @@ function draw() {
     pic1.render();
   } else if (instance == 1) {
     whiteRect();
+
+    nu1 = campus1.get(0, 0, campus1.width, campus1.height);
+    var campus100 = new Img(nu1, 0, 0);
+    campus100.render();
+
+    nu2 = campus2.get(0, 0, campus2.width, campus2.height);
+    var campus200 = new Img(nu2, resizeA + 10, 0);
+    campus200.render();
+
+    nu3 = campus3.get(0, 0, campus3.width, campus3.height);
+    var campus300 = new Img(nu3, 2*(resizeA + 10), 0);
+    campus300.render();
+
+    nu4 = campus4.get(0, 0, campus4.width, campus4.height);
+    var campus400 = new Img(nu4, 3*(resizeA + 10), 0);
+    campus400.render();
+
+    nu5 = campus5.get(0, 0, campus5.width, campus5.height);
+    var campus500 = new Img(nu5, 0, resizeB + 10);
+    campus500.render();
+
+    nu6 = campus6.get(0, 0, campus6.width, campus6.height);
+    var campus600 = new Img(nu6, resizeA + 10, resizeB + 10);
+    campus600.render();
+
+    nu7 = campus7.get(0, 0, campus7.width, campus7.height);
+    var campus700 = new Img(nu7, 2*(resizeA + 10), resizeB + 10);
+    campus700.render();
+
+    nu8 = campus8.get(0, 0, campus8.width, campus8.height);
+    var campus800 = new Img(nu8, 3*(resizeA + 10), resizeB + 10);
+    campus800.render();
+
     ReturnButton();
   } else if (instance == 2) {
     whiteRect();
+
+    fe1 = felix1.get(0, 0, felix1.width, felix1.height);
+    var felix100 = new Img(fe1, 0, 0);
+    felix100.render();
+
+    fe2 = felix2.get(0, 0, felix2.width, felix2.height);
+    var felix200 = new Img(fe2, resizeA + 10, 0);
+    felix200.render();
+
     ReturnButton();
-    console.log("scenario 2");
   } else if (instance == 3) {
     whiteRect();
+
+    f1 = food1.get(0, 0, food1.width, food1.height);
+    var food100 = new Img(f1, 0, 0);
+    food100.render();
+
+    f2 = food2.get(0, 0, food2.width, food2.height);
+    var food200 = new Img(f2, resizeA + 10, 0);
+    food200.render();
+
     ReturnButton();
-    console.log("scenario 3");
   } else if (instance == 4){
     whiteRect();
-    ReturnButton();
     //several pictures, not just one
     d1 = desk1.get(0, 0, desk1.width, desk1.height);
     var desk100 = new Img(d1, 0, 0);
@@ -83,7 +169,16 @@ function draw() {
     d2 = desk2.get(0, 0, desk2.width, desk2.height);
     var desk200 = new Img(d2, resizeA + 10, 0);
     desk200.render();
+
+    d3 = desk3.get(0, 0, desk3.width, desk3.height);
+    var desk300 = new Img(d3, 2*(resizeA + 10), 0);
+    desk300.render();
+
+    d4 = desk4.get(0, 0, desk4.width, desk4.height);
+    var desk400 = new Img(d4, 3*(resizeA + 10), 0);
+    desk400.render();
     // console.log("scenario 4");
+    ReturnButton();
   } else if (instance == 5) {
     whiteRect();
     console.log("scenario 5");
