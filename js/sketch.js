@@ -18,18 +18,22 @@ var patrickIcon;
 var boardIcon;
 var instance = 0;
 var picArray = [];
+var numDots = 550;
 var dotArray = [];
-var numDots = 55;
+// description on first page
 var myFont;
 var title = "Virtual Diary Project"
 var description = "The Virtual Diary Project was originally meant to be a small package of daily, fundamental experiences I could share with my friends to show them my lifestyle in the US. Its purpose is to take on a perspective that cannot be conveyed through conventional social media: the banal, the day-to-day, the routine, the authentic. I have picked six daily motifs that provide routine and a certain stability to my day's schedule. To add some meaningful context, I have juxtaposed several images of that motif on the same page. Enjoy!"
+// icon variables
 var felix;
 var lunch;
 var desk;
 var pic1;
 var patrick;
 var board;
-var move = 60;
+//restricts motion of icons
+var move = 90;
+//image variables
 var campus100;
 var campus200;
 var campus300;
@@ -50,8 +54,8 @@ var desk400;
 function preload() {
   //icons to click on
   photo = loadImage("assets/test7.png");
-  felixIcon = loadImage("assets/test2.png");
-  lunchIcon = loadImage("assets/test3.png");
+  felixIcon = loadImage("assets/test8.png");
+  lunchIcon = loadImage("assets/test9.png");
   deskIcon = loadImage("assets/test4.png");
   patrickIcon = loadImage("assets/test5.png");
   boardIcon = loadImage("assets/test6.png");
@@ -112,6 +116,8 @@ function setup() {
   // campus6.resize(resizeA, resizeB);
   // campus7.resize(resizeA, resizeB);
   // campus8.resize(resizeA, resizeB);
+
+  //creating icons
   photo1 = felixIcon.get(0, 0, photo.width, photo.height);
   felix = new Pic(photo1, width/2.5, 5*height/6);
 
@@ -129,6 +135,8 @@ function setup() {
 
   photo5 = boardIcon.get(0, 0, photo.width, photo.height);
   board = new Pic(photo5, 4.5*width/6, height/5.5);
+
+  //CREATING IMAGES
 
   // nu1 = campus1.get(0, 0, campus1.width, campus1.height);
   // campus100 = new Img(nu1, 0, 0);
@@ -178,6 +186,7 @@ function setup() {
   d4 = desk4.get(0, 0, desk4.width, desk4.height);
   desk400 = new Img(d4, 3*(resizeA + 10), 0);
 
+  //creating background for texture
   for (var i = 0; i < numDots; i++) {
     var d = new Dot();
     dotArray.push(d);
@@ -191,6 +200,7 @@ function draw() {
     for (var i = 0; i < numDots; i++) {
       dotArray[i].render();
     }
+    Line(felix, lunch, desk, pic1, patrick, board);
     //thse are the icons, can be made more programmatic
     felix.render(width/2.5 + move, width/2.5 - move, 5*height/6 + move, 5*height/6 - move);
 
@@ -205,14 +215,6 @@ function draw() {
     board.render(4.5*width/6 + move, 4.5*width/6 - move, height/5.5 + move, height/5.5 - move);
 
     introText();
-    // var iconAarray = [photo1, photo2, photo3, photo4, photo5, crop];
-    // amountOfPics = iconAarray.length;
-    //
-    // for (var i = 0; i < amountOfPics; i++) {
-    //   i.toFixed;
-    //   var icons = new Pic(iconArray[i], 300 + i*100, 310 + i*100);
-    //   icons.render();
-    // }
   } else if (instance == 1) {
     whiteRect();
 
@@ -318,7 +320,7 @@ function Dot() {
   this.x = random(0, width);
   this.y = random(0, height);
   this.c = color('rgba(50, 50, 50, 0.55)');
-  this.r = 5;
+  this.r = random(2,7);
 }
 
 function whiteRect() {
@@ -378,4 +380,25 @@ function introText() {
   textSize(26);
   text(description, 15, 50, width/4);
   pop();
+}
+
+function Line(felix, lunch, desk, pic1, patrick, board) {
+  push();
+  noFill();
+  beginShape();
+  // vertex(width/2.5, 5*height/6);
+  // vertex(width/3, height/2.5);
+  // vertex(.8*width, .65*height);
+  // vertex(width/2, height/5);
+  // vertex(.6*width, height/2);
+  // vertex(4.5*width/6, height/5.5);
+  vertex(felix.x, felix.y);
+  vertex(lunch.x, lunch.y);
+  vertex(desk.x, desk.y);
+  vertex(pic1.x, pic1.y);
+  vertex(patrick.x, patrick.y);
+  vertex(board.x, board.y);
+  endShape();
+  pop();
+
 }
