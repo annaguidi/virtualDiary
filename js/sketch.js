@@ -18,6 +18,8 @@ var patrickIcon;
 var boardIcon;
 var instance = 0;
 var picArray = [];
+var dotArray = [];
+var numDots = 55;
 var myFont;
 var title = "Virtual Diary Project"
 var description = "The Virtual Diary Project was originally meant to be a small package of daily, fundamental experiences I could share with my friends to show them my lifestyle in the US. Its purpose is to take on a perspective that cannot be conveyed through conventional social media: the banal, the day-to-day, the routine, the authentic. I have picked six daily motifs that provide routine and a certain stability to my day's schedule. To add some meaningful context, I have juxtaposed several images of that motif on the same page. Enjoy!"
@@ -47,12 +49,12 @@ var desk400;
 
 function preload() {
   //icons to click on
-  photo = loadImage("assets/marino.gif");
-  felixIcon = loadImage("assets/Felix.png");
-  lunchIcon = loadImage("assets/lunchIcon.png");
-  deskIcon = loadImage("assets/deskIcon.png");
-  patrickIcon = loadImage("assets/patrickIcon.png");
-  boardIcon = loadImage("assets/boardIcon.png");
+  photo = loadImage("assets/test7.png");
+  felixIcon = loadImage("assets/test2.png");
+  lunchIcon = loadImage("assets/test3.png");
+  deskIcon = loadImage("assets/test4.png");
+  patrickIcon = loadImage("assets/test5.png");
+  boardIcon = loadImage("assets/test6.png");
   //the desk
   desk1 = loadImage("assets/20161119_001531.jpg");
   desk2 = loadImage("assets/20161119_114337.jpg");
@@ -82,7 +84,7 @@ function setup() {
   background(255);
 
   //resize variables
-  var resize = windowWidth/13;
+  var resize = windowWidth/12;
   var resizeA = 400;
   var resizeB = 300;
   //resizing Icons
@@ -175,11 +177,20 @@ function setup() {
 
   d4 = desk4.get(0, 0, desk4.width, desk4.height);
   desk400 = new Img(d4, 3*(resizeA + 10), 0);
+
+  for (var i = 0; i < numDots; i++) {
+    var d = new Dot();
+    dotArray.push(d);
+  }
 }
 
 function draw() {
   if (instance == 0) {
     whiteRect();
+
+    for (var i = 0; i < numDots; i++) {
+      dotArray[i].render();
+    }
     //thse are the icons, can be made more programmatic
     felix.render(width/2.5 + move, width/2.5 - move, 5*height/6 + move, 5*height/6 - move);
 
@@ -268,6 +279,7 @@ function draw() {
 
 function mousePressed() {
   if (instance == 0) {
+    //none of this works or is relevant right now
     if (abs(dist(mouseX, mouseY, 300, 300)) <= (windowWidth/15/2)) {
       instance = 2;
       console.log(instance);
@@ -300,6 +312,13 @@ function Pic(image, xpos, ypos) {
   this.y = ypos;
   this.xSpeed = random(-.5, .5);
   this.ySpeed = random(-.5, .5);
+}
+
+function Dot() {
+  this.x = random(0, width);
+  this.y = random(0, height);
+  this.c = color('rgba(50, 50, 50, 0.55)');
+  this.r = 5;
 }
 
 function whiteRect() {
@@ -339,6 +358,14 @@ Pic.prototype.render = function(dx1, dx2, dy1, dy2) {
 
 Img.prototype.render = function() {
   image(this.image, this.x, this.y);
+}
+
+Dot.prototype.render = function() {
+  push();
+  noStroke();
+  fill(this.c);
+  ellipse(this.x, this.y, this.r, this.r);
+  pop();
 }
 
 function introText() {
