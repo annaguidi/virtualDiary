@@ -21,6 +21,29 @@ var picArray = [];
 var myFont;
 var title = "Virtual Diary Project"
 var description = "The Virtual Diary Project was originally meant to be a small package of daily, fundamental experiences I could share with my friends to show them my lifestyle in the US. Its purpose is to take on a perspective that cannot be conveyed through conventional social media: the banal, the day-to-day, the routine, the authentic. I have picked six daily motifs that provide routine and a certain stability to my day's schedule. To add some meaningful context, I have juxtaposed several images of that motif on the same page. Enjoy!"
+var felix;
+var lunch;
+var desk;
+var pic1;
+var patrick;
+var board;
+var move = 60;
+var campus100;
+var campus200;
+var campus300;
+var campus400;
+var campus500;
+var campus600;
+var campus700;
+var campus800;
+var felix100;
+var felix200;
+var food100;
+var food200;
+var desk100;
+var desk200;
+var desk300;
+var desk400;
 
 function preload() {
   //icons to click on
@@ -59,7 +82,7 @@ function setup() {
   background(255);
 
   //resize variables
-  var resize = windowWidth/15;
+  var resize = windowWidth/13;
   var resizeA = 400;
   var resizeB = 300;
   //resizing Icons
@@ -70,6 +93,7 @@ function setup() {
   patrickIcon.resize(resize, resize);
   boardIcon.resize(resize, resize);
 
+  //resizing album images
   desk1.resize(resizeA, resizeB);
   desk2.resize(resizeA, resizeB);
   desk3.resize(resizeA, resizeB);
@@ -86,35 +110,88 @@ function setup() {
   // campus6.resize(resizeA, resizeB);
   // campus7.resize(resizeA, resizeB);
   // campus8.resize(resizeA, resizeB);
+  photo1 = felixIcon.get(0, 0, photo.width, photo.height);
+  felix = new Pic(photo1, width/2.5, 5*height/6);
+
+  photo2 = lunchIcon.get(0, 0, photo.width, photo.height);
+  lunch = new Pic(photo2, width/3, height/2.5);
+
+  photo3 = deskIcon.get(0, 0, photo.width, photo.height);
+  desk = new Pic(photo3, .8*width, .65*height);
+
+  crop = photo.get(0, 0, photo.width, photo.height);
+  pic1 = new Pic(crop, width/2, height/5);
+
+  photo4 = patrickIcon.get(0, 0, photo.width, photo.height);
+  patrick = new Pic(photo4, .6*width, height/2);
+
+  photo5 = boardIcon.get(0, 0, photo.width, photo.height);
+  board = new Pic(photo5, 4.5*width/6, height/5.5);
+
+  // nu1 = campus1.get(0, 0, campus1.width, campus1.height);
+  // campus100 = new Img(nu1, 0, 0);
+
+  // nu2 = campus2.get(0, 0, campus2.width, campus2.height);
+  // campus200 = new Img(nu2, resizeA + 10, 0);
+
+  // nu3 = campus3.get(0, 0, campus3.width, campus3.height);
+  // campus300 = new Img(nu3, 2*(resizeA + 10), 0);
+
+  // nu4 = campus4.get(0, 0, campus4.width, campus4.height);
+  // campus400 = new Img(nu4, 3*(resizeA + 10), 0);
+
+  // nu5 = campus5.get(0, 0, campus5.width, campus5.height);
+  // campus500 = new Img(nu5, 0, resizeB + 10);
+
+  // nu6 = campus6.get(0, 0, campus6.width, campus6.height);
+  // campus600 = new Img(nu6, resizeA + 10, resizeB + 10);
+
+  // nu7 = campus7.get(0, 0, campus7.width, campus7.height);
+  // campus700 = new Img(nu7, 2*(resizeA + 10), resizeB + 10);
+
+  // nu8 = campus8.get(0, 0, campus8.width, campus8.height);
+  // campus800 = new Img(nu8, 3*(resizeA + 10), resizeB + 10);
+
+  fe1 = felix1.get(0, 0, felix1.width, felix1.height);
+  felix100 = new Img(fe1, 0, 0);
+
+  fe2 = felix2.get(0, 0, felix2.width, felix2.height);
+  felix200 = new Img(fe2, resizeA + 10, 0);
+
+  f1 = food1.get(0, 0, food1.width, food1.height);
+  food100 = new Img(f1, 0, 0);
+
+  f2 = food2.get(0, 0, food2.width, food2.height);
+  food200 = new Img(f2, resizeA + 10, 0);
+
+  d1 = desk1.get(0, 0, desk1.width, desk1.height);
+  desk100 = new Img(d1, 0, 0);
+
+  d2 = desk2.get(0, 0, desk2.width, desk2.height);
+  desk200 = new Img(d2, resizeA + 10, 0);
+
+  d3 = desk3.get(0, 0, desk3.width, desk3.height);
+  desk300 = new Img(d3, 2*(resizeA + 10), 0);
+
+  d4 = desk4.get(0, 0, desk4.width, desk4.height);
+  desk400 = new Img(d4, 3*(resizeA + 10), 0);
 }
 
 function draw() {
   if (instance == 0) {
     whiteRect();
-    //thse are the icons
-    photo1 = felixIcon.get(0, 0, photo.width, photo.height);
-    var felix = new Pic(photo1, width/5.5, 5*height/6);
-    felix.render();
+    //thse are the icons, can be made more programmatic
+    felix.render(width/2.5 + move, width/2.5 - move, 5*height/6 + move, 5*height/6 - move);
 
-    photo2 = lunchIcon.get(0, 0, photo.width, photo.height);
-    var lunch = new Pic(photo2, width/3, height/2.5);
-    lunch.render();
+    lunch.render(width/3 + move, width/3 - move, height/2.5 + move, height/2.5 - move);
 
-    photo3 = deskIcon.get(0, 0, photo.width, photo.height);
-    var desk = new Pic(photo3, 2*width/3, 4*height/5);
-    desk.render();
+    desk.render(.8*width + move, .8*width - move, .65*height + move, .65*height - move);
 
-    crop = photo.get(0, 0, photo.width, photo.height);
-    var pic1 = new Pic(crop, width/4, height/5);
-    pic1.render();
+    pic1.render(width/2 + move, width/2 - move, height/5 + move, height/5 - move);
 
-    photo4 = patrickIcon.get(0, 0, photo.width, photo.height);
-    var patrick = new Pic(photo4, width/2, height/2);
-    patrick.render();
+    patrick.render(.6*width + move, .6*width - move, height/2 + move, height/2 - move);
 
-    photo5 = boardIcon.get(0, 0, photo.width, photo.height);
-    var board = new Pic(photo5, 4.5*width/6, height/5.5);
-    board.render();
+    board.render(4.5*width/6 + move, 4.5*width/6 - move, height/5.5 + move, height/5.5 - move);
 
     introText();
     // var iconAarray = [photo1, photo2, photo3, photo4, photo5, crop];
@@ -128,80 +205,49 @@ function draw() {
   } else if (instance == 1) {
     whiteRect();
 
-    // nu1 = campus1.get(0, 0, campus1.width, campus1.height);
-    // var campus100 = new Img(nu1, 0, 0);
     // campus100.render();
     //
-    // nu2 = campus2.get(0, 0, campus2.width, campus2.height);
-    // var campus200 = new Img(nu2, resizeA + 10, 0);
     // campus200.render();
     //
-    // nu3 = campus3.get(0, 0, campus3.width, campus3.height);
-    // var campus300 = new Img(nu3, 2*(resizeA + 10), 0);
     // campus300.render();
     //
-    // nu4 = campus4.get(0, 0, campus4.width, campus4.height);
-    // var campus400 = new Img(nu4, 3*(resizeA + 10), 0);
     // campus400.render();
     //
-    // nu5 = campus5.get(0, 0, campus5.width, campus5.height);
-    // var campus500 = new Img(nu5, 0, resizeB + 10);
     // campus500.render();
     //
-    // nu6 = campus6.get(0, 0, campus6.width, campus6.height);
-    // var campus600 = new Img(nu6, resizeA + 10, resizeB + 10);
     // campus600.render();
     //
-    // nu7 = campus7.get(0, 0, campus7.width, campus7.height);
-    // var campus700 = new Img(nu7, 2*(resizeA + 10), resizeB + 10);
     // campus700.render();
     //
-    // nu8 = campus8.get(0, 0, campus8.width, campus8.height);
-    // var campus800 = new Img(nu8, 3*(resizeA + 10), resizeB + 10);
     // campus800.render();
 
     ReturnButton();
   } else if (instance == 2) {
     whiteRect();
 
-    fe1 = felix1.get(0, 0, felix1.width, felix1.height);
-    var felix100 = new Img(fe1, 0, 0);
     felix100.render();
 
-    fe2 = felix2.get(0, 0, felix2.width, felix2.height);
-    var felix200 = new Img(fe2, resizeA + 10, 0);
     felix200.render();
 
     ReturnButton();
   } else if (instance == 3) {
     whiteRect();
 
-    f1 = food1.get(0, 0, food1.width, food1.height);
-    var food100 = new Img(f1, 0, 0);
     food100.render();
 
-    f2 = food2.get(0, 0, food2.width, food2.height);
-    var food200 = new Img(f2, resizeA + 10, 0);
     food200.render();
 
     ReturnButton();
   } else if (instance == 4){
     whiteRect();
     //several pictures, not just one
-    d1 = desk1.get(0, 0, desk1.width, desk1.height);
-    var desk100 = new Img(d1, 0, 0);
+
     desk100.render();
 
-    d2 = desk2.get(0, 0, desk2.width, desk2.height);
-    var desk200 = new Img(d2, resizeA + 10, 0);
     desk200.render();
 
-    d3 = desk3.get(0, 0, desk3.width, desk3.height);
-    var desk300 = new Img(d3, 2*(resizeA + 10), 0);
     desk300.render();
 
-    d4 = desk4.get(0, 0, desk4.width, desk4.height);
-    var desk400 = new Img(d4, 3*(resizeA + 10), 0);
     desk400.render();
     // console.log("scenario 4");
     ReturnButton();
@@ -234,10 +280,10 @@ function mousePressed() {
     } else if (abs(dist(mouseX, mouseY, 200, 200)) <= (windowWidth/15/2)) {
       instance = 1;
       console.log(instance);
-    } else if (abs(dist(mouseX, mouseY, width/2, height/2)) <= (50)) {
-      instance = 0;
-      console.log(instance);
     }
+  } else if (abs(dist(mouseX, mouseY, width/2, height/2)) <= (50)) {
+    instance = 0;
+    console.log(instance);
   }
 }
 
@@ -247,10 +293,13 @@ function Img(image, xpos, ypos) {
   this.y = ypos;
 }
 
+//this is for the icons
 function Pic(image, xpos, ypos) {
   this.image = image;
   this.x = xpos;
   this.y = ypos;
+  this.xSpeed = random(-.5, .5);
+  this.ySpeed = random(-.5, .5);
 }
 
 function whiteRect() {
@@ -269,11 +318,23 @@ function ReturnButton() {
   pop();
 }
 
-Pic.prototype.render = function() {
+//to show icons
+Pic.prototype.render = function(dx1, dx2, dy1, dy2) {
   push();
   imageMode(CENTER);
   image(this.image, this.x, this.y);
   pop();
+
+  this.x += this.xSpeed;
+  this.y += this.ySpeed;
+
+  if (this.x > dx1 || this.x < dx2) {
+    this.xSpeed *= -1;
+  }
+
+  if (this.y > dy1 || this.y < dy2) {
+    this.ySpeed *= -1;
+  }
 }
 
 Img.prototype.render = function() {
@@ -283,12 +344,11 @@ Img.prototype.render = function() {
 function introText() {
   push();
   // noStroke();
-  // fill('#ED225D,0.99');
-  // rect(width/5, height/2, 3*width/4, height/3);
+  // fill('#959EA8');
+  // rect(windowWidth-windowWidth, windowHeight-windowHeight, width/4, height)
   fill('#ED225D');
   textFont(myFont);
   textSize(26);
-  textAlign(CENTER);
-  text(description, width/5, height/2, 3*width/4, height/3);
+  text(description, 15, 50, width/4);
   pop();
 }
