@@ -3,10 +3,13 @@ var desk1;
 var desk2;
 var desk3;
 var desk4;
+var desk5;
+var desk6;
 var food1;
 var food2;
 var felix1;
 var felix2;
+var felix3;
 var campus1;
 var campus2;
 var campus3;
@@ -18,7 +21,7 @@ var patrickIcon;
 var boardIcon;
 var instance = 0;
 var picArray = [];
-var numDots = 550;
+var numDots = 600;
 var dotArray = [];
 // description on first page
 var myFont;
@@ -44,12 +47,15 @@ var campus700;
 var campus800;
 var felix100;
 var felix200;
+var felix300;
 var food100;
 var food200;
 var desk100;
 var desk200;
 var desk300;
 var desk400;
+var desk500;
+var desk600;
 
 function preload() {
   //icons to click on
@@ -63,14 +69,16 @@ function preload() {
   desk1 = loadImage("assets/20161119_001531.jpg");
   desk2 = loadImage("assets/20161119_114337.jpg");
   desk3 = loadImage("assets/20161122_125345.jpg");
-  desk4 = loadImage("assets/20161118_001612.jpg");
+  desk4 = loadImage("assets/20161127_231726.jpg");
+  desk5 = loadImage("assets/20161128_094255.jpg");
+  desk6 = loadImage("assets/20161128_175727.jpg");
 
   food1 = loadImage("assets/20161121_115735.jpg");
   food2 = loadImage("assets/20161121_205016.jpg");
 
   felix1 = loadImage("assets/20161119_122413.jpg");
   felix2 = loadImage("assets/20161122_153336.jpg");
-
+  felix3 = loadImage("assets/20161119_122413.jpg");
   // campus1 = loadImage("assets/20161116_124905.jpg");
   // campus2 = loadImage("assets/20161115_105544.jpg");
   // campus3 = loadImage("assets/20161115_105607.jpg");
@@ -88,9 +96,10 @@ function setup() {
   background(255);
 
   //resize variables
+  //this is the RADIUS of the icons and images!!!!!
   var resize = windowWidth/12;
-  var resizeA = 400;
-  var resizeB = 300;
+  var resizeA = windowWidth/3;
+  var resizeB = .45*windowHeight;
   //resizing Icons
   photo.resize(resize, resize);
   felixIcon.resize(resize, resize);
@@ -104,10 +113,15 @@ function setup() {
   desk2.resize(resizeA, resizeB);
   desk3.resize(resizeA, resizeB);
   desk4.resize(resizeA, resizeB);
+  desk5.resize(resizeA, resizeB);
+  desk6.resize(resizeA, resizeB);
+
   food1.resize(resizeA, resizeB);
   food2.resize(resizeA, resizeB);
+
   felix1.resize(resizeA, resizeB);
   felix2.resize(resizeA, resizeB);
+  felix3.resize(resizeA, resizeB);
   // campus1.resize(resizeA, resizeB);
   // campus2.resize(resizeA, resizeB);
   // campus3.resize(resizeA, resizeB);
@@ -163,10 +177,13 @@ function setup() {
   // campus800 = new Img(nu8, 3*(resizeA + 10), resizeB + 10);
 
   fe1 = felix1.get(0, 0, felix1.width, felix1.height);
-  felix100 = new Img(fe1, 0, 0);
+  felix100 = new Img(fe1, 0, .1*height);
 
   fe2 = felix2.get(0, 0, felix2.width, felix2.height);
-  felix200 = new Img(fe2, resizeA + 10, 0);
+  felix200 = new Img(fe2, resizeA + 10, .1*height);
+
+  fe3 = felix3.get(0, 0, felix3.width, felix3.height);
+  felix300 = new Img(fe3, 2*(resizeA + 10), .1*height);
 
   f1 = food1.get(0, 0, food1.width, food1.height);
   food100 = new Img(f1, 0, 0);
@@ -174,17 +191,24 @@ function setup() {
   f2 = food2.get(0, 0, food2.width, food2.height);
   food200 = new Img(f2, resizeA + 10, 0);
 
+  //desk series
   d1 = desk1.get(0, 0, desk1.width, desk1.height);
-  desk100 = new Img(d1, 0, 0);
+  desk100 = new Img(d1, 0, .1*height);
 
   d2 = desk2.get(0, 0, desk2.width, desk2.height);
-  desk200 = new Img(d2, resizeA + 10, 0);
+  desk200 = new Img(d2, resizeA + 10, .1*height);
 
   d3 = desk3.get(0, 0, desk3.width, desk3.height);
-  desk300 = new Img(d3, 2*(resizeA + 10), 0);
+  desk300 = new Img(d3, 2*(resizeA + 10), .1*height);
 
   d4 = desk4.get(0, 0, desk4.width, desk4.height);
-  desk400 = new Img(d4, 3*(resizeA + 10), 0);
+  desk400 = new Img(d4, 0, .1*height + resizeB + 10);
+
+  d5 = desk5.get(0, 0, desk5.width, desk5.height);
+  desk500 = new Img(d5, resizeA + 10, .1*height + resizeB + 10);
+
+  d6 = desk6.get(0, 0, desk6.width, desk6.height);
+  desk600 = new Img(d6, 2*(resizeA + 10), .1*height + resizeB + 10);
 
   //creating background for texture
   for (var i = 0; i < numDots; i++) {
@@ -242,6 +266,8 @@ function draw() {
 
     felix200.render();
 
+    felix300.render();
+
     ReturnButton();
   } else if (instance == 3) {
     whiteRect();
@@ -262,39 +288,46 @@ function draw() {
     desk300.render();
 
     desk400.render();
+
+    desk500.render();
+
+    desk600.render();
     // console.log("scenario 4");
     ReturnButton();
   } else if (instance == 5) {
     whiteRect();
     console.log("scenario 5");
+    ReturnButton();
   } else if (instance == 6) {
     whiteRect();
+    ReturnButton();
     console.log("scenario 6");
-  } else if (instance == 7) {
-    whiteRect();
-    console.log("scenario 7");
-  } else {
-    whiteRect();
-    console.log("scenario 8");
   }
 }
 
 function mousePressed() {
   if (instance == 0) {
     //none of this works or is relevant right now
-    if (abs(dist(mouseX, mouseY, 300, 300)) <= (windowWidth/15/2)) {
+    if (abs(dist(mouseX, mouseY, felix.x, felix.y)) <= (windowWidth/12/2)) {
       instance = 2;
       console.log(instance);
-    } else if (abs(dist(mouseX, mouseY, 400, 400)) <= (windowWidth/15/2)) {
+    } else if (abs(dist(mouseX, mouseY, lunch.x, lunch.y)) <= (windowWidth/12)) {
       instance = 3;
       console.log(instance);
-    } else if (abs(dist(mouseX, mouseY, 500, 500)) <= (windowWidth/15/2)) {
+    } else if (abs(dist(mouseX, mouseY, desk.x, desk.y)) <= (windowWidth/12/2)) {
       instance = 4;
       console.log(instance);
-    } else if (abs(dist(mouseX, mouseY, 200, 200)) <= (windowWidth/15/2)) {
+    } else if (abs(dist(mouseX, mouseY, pic1.x, pic1.y)) <= (windowWidth/12/2)) {
       instance = 1;
       console.log(instance);
+    } else if (abs(dist(mouseX, mouseY, patrick.x, patrick.y)) <= (windowWidth/12/2)) {
+      instance = 5;
+      console.log(instance);
+    } else if (abs(dist(mouseX, mouseY, board.x, board.y)) <= (windowWidth/12/2)) {
+      instance = 6;
+      console.log(instance);
     }
+    //this is the temporary return button
   } else if (abs(dist(mouseX, mouseY, width/2, height/2)) <= (50)) {
     instance = 0;
     console.log(instance);
@@ -312,15 +345,16 @@ function Pic(image, xpos, ypos) {
   this.image = image;
   this.x = xpos;
   this.y = ypos;
-  this.xSpeed = random(-.5, .5);
-  this.ySpeed = random(-.5, .5);
+  this.xSpeed = random(-1, 1);
+  this.ySpeed = random(-1, 1);
 }
 
 function Dot() {
   this.x = random(0, width);
   this.y = random(0, height);
-  this.c = color('rgba(50, 50, 50, 0.55)');
-  this.r = random(2,7);
+  var opacity = random(.2,.9);
+  this.c = color('rgba(78,113,137, 0.55)');
+  this.r = random(1,7);
 }
 
 function whiteRect() {
@@ -372,9 +406,6 @@ Dot.prototype.render = function() {
 
 function introText() {
   push();
-  // noStroke();
-  // fill('#959EA8');
-  // rect(windowWidth-windowWidth, windowHeight-windowHeight, width/4, height)
   fill('#ED225D');
   textFont(myFont);
   textSize(26);
@@ -386,12 +417,6 @@ function Line(felix, lunch, desk, pic1, patrick, board) {
   push();
   noFill();
   beginShape();
-  // vertex(width/2.5, 5*height/6);
-  // vertex(width/3, height/2.5);
-  // vertex(.8*width, .65*height);
-  // vertex(width/2, height/5);
-  // vertex(.6*width, height/2);
-  // vertex(4.5*width/6, height/5.5);
   vertex(felix.x, felix.y);
   vertex(lunch.x, lunch.y);
   vertex(desk.x, desk.y);
