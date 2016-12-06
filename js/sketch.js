@@ -21,7 +21,7 @@ var patrickIcon;
 var boardIcon;
 // TWO MOST IMPORTANT VARIABLES!
 var instance = 0;
-var photonumber = 0;
+var photonumber = 1;
 //
 var picArray = [];
 var numDots = 600;
@@ -257,41 +257,70 @@ function draw() {
   } else if (instance == 1) {
     whiteRect();
 
-    // campus100.render();
-    //
-    // campus200.render();
-    //
-    // campus300.render();
-    //
-    // campus400.render();
-    //
-    // campus500.render();
-    //
-    // campus600.render();
-    //
-    // campus700.render();
-    //
-    // campus800.render();
+    if (photonumber == 1) {
+      // campus100.render();
+    } else if (photonumber == 2) {
+      // campus200.render();
+    } else if (photonumber == 3) {
+      // campus300.render();
+    } else if (photonumber == 4 ){
+      // campus400.render();
+    } else if (photonumber == 5) {
+      // campus500.render();
+    } else if (photonumber == 6) {
+      // campus600.render();
+    } else if (photonumber == 7) {
+      // campus700.render();
+    } else if (photonumber == 8) {
+      // campus800.render();
+    }
+
 
     ReturnButton();
     Title(schoolTitle);
   } else if (instance == 2) {
     whiteRect();
 
-    //felix100.render();
-
-    //felix200.render();
-
-    felix300.render();
+    if (photonumber == 1) {
+      felix100.render();
+    } else if (photonumber == 2) {
+      felix200.render();
+    } else if (photonumber == 3) {
+      felix300.render();
+    } else if (photonumber == 4 ){
+      // felix400.render();
+    } else if (photonumber == 5) {
+      // felix500.render();
+    } else if (photonumber == 6) {
+      // felix600.render();
+    } else if (photonumber == 7) {
+      // felix700.render();
+    } else if (photonumber == 8) {
+      // felix800.render();
+    }
 
     ReturnButton();
     Title(felixTitle);
   } else if (instance == 3) {
     whiteRect();
 
-    food100.render();
-
-    food200.render();
+    if (photonumber == 1) {
+      food100.render();
+    } else if (photonumber == 2) {
+      food200.render();
+    } else if (photonumber == 3) {
+      //food300.render();
+    } else if (photonumber == 4 ){
+      // food400.render();
+    } else if (photonumber == 5) {
+      // food500.render();
+    } else if (photonumber == 6) {
+      // food600.render();
+    } else if (photonumber == 7) {
+      // food700.render();
+    } else if (photonumber == 8) {
+      // food800.render();
+    }
 
     ReturnButton();
     Title(foodTitle);
@@ -353,8 +382,9 @@ function mousePressed() {
       console.log(instance);
     }
     //this is the temporary return button
-  } else if (abs(dist(mouseX, mouseY, width/2, height/2)) <= (50)) {
+  } else if (abs(dist(mouseX, mouseY, .9*width, .07*height)) <= (50)) {
     instance = 0;
+    photonumber = 1;
     console.log(instance);
   }
 }
@@ -394,7 +424,7 @@ function ReturnButton() {
   push();
   rectMode(CENTER);
   fill(100,0,100);
-  rect(width/2, height/2, 50, 50);
+  rect(.9*width, .07*height, 50, 50);
   pop();
 }
 
@@ -463,4 +493,13 @@ function Title(titolo) {
   textSize(26);
   text(titolo, width/2, .07*height);
   pop();
+}
+
+function keyPressed(){
+  if (keyCode === UP_ARROW && photonumber < 9) {
+   photonumber++;
+ } else if (keyCode === DOWN_ARROW && photonumber > 1) {
+   photonumber--;
+  }
+  return false; // prevent any default behaviour
 }
