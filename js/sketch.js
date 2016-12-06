@@ -19,7 +19,10 @@ var felixIcon;
 var lunchIcon;
 var patrickIcon;
 var boardIcon;
+// TWO MOST IMPORTANT VARIABLES!
 var instance = 0;
+var photonumber = 0;
+//
 var picArray = [];
 var numDots = 600;
 var dotArray = [];
@@ -27,6 +30,12 @@ var dotArray = [];
 var myFont;
 var title = "Virtual Diary Project"
 var description = "The Virtual Diary Project was originally meant to be a small package of daily, fundamental experiences I could share with my friends to show them my lifestyle in the US. Its purpose is to take on a perspective that cannot be conveyed through conventional social media: the banal, the day-to-day, the routine, the authentic. I have picked six daily motifs that provide routine and a certain stability to my day's schedule. To add some meaningful context, I have juxtaposed several images of that motif on the same page. Enjoy!"
+var felixTitle = "Felix - Cornerstore"
+var foodTitle = "Lunch/Dinner"
+var patrickTitle = "Patrick"
+var deskTitle = "Desk"
+var schoolTitle = "School"
+var campusTitle = "Campus"
 // icon variables
 var felix;
 var lunch;
@@ -78,7 +87,8 @@ function preload() {
 
   felix1 = loadImage("assets/20161119_122413.jpg");
   felix2 = loadImage("assets/20161122_153336.jpg");
-  felix3 = loadImage("assets/20161119_122413.jpg");
+  //felix3 = loadImage("assets/20161119_122413.jpg");
+  felix3 = loadImage("assets/20161129_094416resampled3.jpg");
   // campus1 = loadImage("assets/20161116_124905.jpg");
   // campus2 = loadImage("assets/20161115_105544.jpg");
   // campus3 = loadImage("assets/20161115_105607.jpg");
@@ -100,6 +110,9 @@ function setup() {
   var resize = windowWidth/12;
   var resizeA = windowWidth/3;
   var resizeB = .45*windowHeight;
+
+  var newPictureWidth = 0.75 * windowWidth;
+  var scaleFactor = newPictureWidth / felix3.width;
   //resizing Icons
   photo.resize(resize, resize);
   felixIcon.resize(resize, resize);
@@ -109,27 +122,29 @@ function setup() {
   boardIcon.resize(resize, resize);
 
   //resizing album images
-  desk1.resize(resizeA, resizeB);
-  desk2.resize(resizeA, resizeB);
-  desk3.resize(resizeA, resizeB);
-  desk4.resize(resizeA, resizeB);
-  desk5.resize(resizeA, resizeB);
-  desk6.resize(resizeA, resizeB);
+  desk1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  desk2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  desk3.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  desk4.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  desk5.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  desk6.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
 
-  food1.resize(resizeA, resizeB);
-  food2.resize(resizeA, resizeB);
+  food1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  food2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
 
-  felix1.resize(resizeA, resizeB);
-  felix2.resize(resizeA, resizeB);
-  felix3.resize(resizeA, resizeB);
-  // campus1.resize(resizeA, resizeB);
-  // campus2.resize(resizeA, resizeB);
-  // campus3.resize(resizeA, resizeB);
-  // campus4.resize(resizeA, resizeB);
-  // campus5.resize(resizeA, resizeB);
-  // campus6.resize(resizeA, resizeB);
-  // campus7.resize(resizeA, resizeB);
-  // campus8.resize(resizeA, resizeB);
+  felix1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  felix2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+
+  felix3.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+
+  // campus1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  // campus2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  // campus3.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  // campus4.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  // campus5.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  // campus6.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  // campus7.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  // campus8.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
 
   //creating icons
   photo1 = felixIcon.get(0, 0, photo.width, photo.height);
@@ -153,62 +168,62 @@ function setup() {
   //CREATING IMAGES
 
   // nu1 = campus1.get(0, 0, campus1.width, campus1.height);
-  // campus100 = new Img(nu1, 0, 0);
+  // campus100 = new Img(nu1, .1*width, .1*height);
 
   // nu2 = campus2.get(0, 0, campus2.width, campus2.height);
-  // campus200 = new Img(nu2, resizeA + 10, 0);
+  // campus200 = new Img(nu2, .1*width, .1*height);
 
   // nu3 = campus3.get(0, 0, campus3.width, campus3.height);
-  // campus300 = new Img(nu3, 2*(resizeA + 10), 0);
+  // campus300 = new Img(nu3, .1*width, .1*height);
 
   // nu4 = campus4.get(0, 0, campus4.width, campus4.height);
-  // campus400 = new Img(nu4, 3*(resizeA + 10), 0);
+  // campus400 = new Img(nu4, .1*width, .1*height);
 
   // nu5 = campus5.get(0, 0, campus5.width, campus5.height);
-  // campus500 = new Img(nu5, 0, resizeB + 10);
+  // campus500 = new Img(nu5, .1*width, .1*height);
 
   // nu6 = campus6.get(0, 0, campus6.width, campus6.height);
-  // campus600 = new Img(nu6, resizeA + 10, resizeB + 10);
+  // campus600 = new Img(nu6, .1*width, .1*height);
 
   // nu7 = campus7.get(0, 0, campus7.width, campus7.height);
-  // campus700 = new Img(nu7, 2*(resizeA + 10), resizeB + 10);
+  // campus700 = new Img(nu7, .1*width, .1*height);
 
   // nu8 = campus8.get(0, 0, campus8.width, campus8.height);
-  // campus800 = new Img(nu8, 3*(resizeA + 10), resizeB + 10);
+  // campus800 = new Img(nu8, .1*width, .1*height);
 
   fe1 = felix1.get(0, 0, felix1.width, felix1.height);
-  felix100 = new Img(fe1, 0, .1*height);
+  felix100 = new Img(fe1, .1*width, .1*height);
 
   fe2 = felix2.get(0, 0, felix2.width, felix2.height);
-  felix200 = new Img(fe2, resizeA + 10, .1*height);
+  felix200 = new Img(fe2, .1*width, .1*height);
 
   fe3 = felix3.get(0, 0, felix3.width, felix3.height);
-  felix300 = new Img(fe3, 2*(resizeA + 10), .1*height);
+  felix300 = new Img(fe3, .1*width, .1*height);
 
   f1 = food1.get(0, 0, food1.width, food1.height);
-  food100 = new Img(f1, 0, 0);
+  food100 = new Img(f1, .1*width, .1*height);
 
   f2 = food2.get(0, 0, food2.width, food2.height);
-  food200 = new Img(f2, resizeA + 10, 0);
+  food200 = new Img(f2, .1*width, .1*height);
 
   //desk series
   d1 = desk1.get(0, 0, desk1.width, desk1.height);
-  desk100 = new Img(d1, 0, .1*height);
+  desk100 = new Img(d1, .1*width, .1*height);
 
   d2 = desk2.get(0, 0, desk2.width, desk2.height);
-  desk200 = new Img(d2, resizeA + 10, .1*height);
+  desk200 = new Img(d2, .1*width, .1*height);
 
   d3 = desk3.get(0, 0, desk3.width, desk3.height);
-  desk300 = new Img(d3, 2*(resizeA + 10), .1*height);
+  desk300 = new Img(d3, .1*width, .1*height);
 
   d4 = desk4.get(0, 0, desk4.width, desk4.height);
-  desk400 = new Img(d4, 0, .1*height + resizeB + 10);
+  desk400 = new Img(d4, .1*width, .1*height);
 
   d5 = desk5.get(0, 0, desk5.width, desk5.height);
-  desk500 = new Img(d5, resizeA + 10, .1*height + resizeB + 10);
+  desk500 = new Img(d5, .1*width, .1*height);
 
   d6 = desk6.get(0, 0, desk6.width, desk6.height);
-  desk600 = new Img(d6, 2*(resizeA + 10), .1*height + resizeB + 10);
+  desk600 = new Img(d6, .1*width, .1*height);
 
   //creating background for texture
   for (var i = 0; i < numDots; i++) {
@@ -259,16 +274,18 @@ function draw() {
     // campus800.render();
 
     ReturnButton();
+    Title(schoolTitle);
   } else if (instance == 2) {
     whiteRect();
 
-    felix100.render();
+    //felix100.render();
 
-    felix200.render();
+    //felix200.render();
 
     felix300.render();
 
     ReturnButton();
+    Title(felixTitle);
   } else if (instance == 3) {
     whiteRect();
 
@@ -277,6 +294,7 @@ function draw() {
     food200.render();
 
     ReturnButton();
+    Title(foodTitle);
   } else if (instance == 4){
     whiteRect();
     //several pictures, not just one
@@ -294,13 +312,20 @@ function draw() {
     desk600.render();
     // console.log("scenario 4");
     ReturnButton();
+    Title(deskTitle);
   } else if (instance == 5) {
     whiteRect();
-    console.log("scenario 5");
+
     ReturnButton();
+    Title(patrickTitle);
+
+    console.log("scenario 5");
   } else if (instance == 6) {
     whiteRect();
+
     ReturnButton();
+    Title(schoolTitle);
+
     console.log("scenario 6");
   }
 }
@@ -393,7 +418,10 @@ Pic.prototype.render = function(dx1, dx2, dy1, dy2) {
 }
 
 Img.prototype.render = function() {
+  // push();
+  // imageMode(CENTER);
   image(this.image, this.x, this.y);
+  // pop();
 }
 
 Dot.prototype.render = function() {
@@ -426,4 +454,13 @@ function Line(felix, lunch, desk, pic1, patrick, board) {
   endShape();
   pop();
 
+}
+
+function Title(titolo) {
+  push();
+  textAlign(CENTER);
+  textFont(myFont);
+  textSize(26);
+  text(titolo, width/2, .07*height);
+  pop();
 }
