@@ -20,6 +20,14 @@ var food4;
 var food5;
 var food6;
 var food7;
+//work
+var work1;
+var work2;
+var work3;
+var work4;
+var work5;
+var work6;
+var work7;
 //felix
 var felix1;
 var felix2;
@@ -55,11 +63,11 @@ var myFont;
 var title = "Virtual Diary Project"
 var description = "The Virtual Diary Project was originally meant to be a small package of daily, fundamental experiences I could share with my friends to show them my lifestyle in the US. Its purpose is to take on a perspective that cannot be conveyed through conventional social media: the banal, the day-to-day, the routine, the authentic. I have picked six daily motifs that provide routine and a certain stability to my day's schedule. To add some meaningful context, I have juxtaposed several images of that motif on the same page. Enjoy!"
 var felixTitle = "Felix - Cornerstore"
-var foodTitle = "Lunch/Dinner"
+var foodTitle = "Lunch (Dinner)"
 var patrickTitle = "Patrick"
-var deskTitle = "Desk"
-var schoolTitle = "School"
-var campusTitle = "Campus"
+var deskTitle = "Stress Indicator"
+var schoolTitle = "The Bubble"
+var campusTitle = "Work"
 // icon variables
 var felix;
 var lunch;
@@ -78,6 +86,14 @@ var campus500;
 var campus600;
 var campus700;
 var campus800;
+//work
+var work100;
+var work200;
+var work300;
+var work400;
+var work500;
+var work600;
+var work700;
 //felix
 var felix100;
 var felix200;
@@ -132,6 +148,14 @@ function preload() {
   food5 = loadImage("assets/food/20161202_114900.jpg");
   food6 = loadImage("assets/food/20161202_203806.jpg");
   food7 = loadImage("assets/food/20161206_114639.jpg");
+  //work
+  work1 = loadImage("assets/board/20161130_082826.jpg");
+  work2 = loadImage("assets/board/20161130_155439.jpg");
+  work3 = loadImage("assets/board/20161201_122601.jpg");
+  work4 = loadImage("assets/board/20161204_233716.jpg");
+  work5 = loadImage("assets/board/20161205_193427.jpg");
+  work6 = loadImage("assets/board/20161205_201019.jpg");
+  work7 = loadImage("assets/board/20161205_221546.jpg");
   //felix
   felix1 = loadImage("assets/felix/20161119_122413.jpg");
   felix2 = loadImage("assets/felix/20161122_153336.jpg");
@@ -218,6 +242,14 @@ function setup() {
   campus7.resize(scaleFactor * campus7.width, scaleFactor * campus7.height);
   // campus8.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
 
+  work1.resize(scaleFactor * work1.width, scaleFactor * work1.height);
+  work2.resize(scaleFactor * work2.width, scaleFactor * work2.height);
+  work3.resize(scaleFactor * work3.width, scaleFactor * work3.height);
+  work4.resize(scaleFactor * work4.width, scaleFactor * work4.height);
+  work5.resize(scaleFactor * work5.width, scaleFactor * work5.height);
+  work6.resize(scaleFactor * work6.width, scaleFactor * work6.height);
+  work7.resize(scaleFactor * work7.width, scaleFactor * work7.height);
+
   //creating icons
   photo1 = felixIcon.get(0, 0, photo.width, photo.height);
   felix = new Pic(photo1, width/2.5, 5*height/6);
@@ -285,7 +317,6 @@ function setup() {
   felix700 = new Img(fe7, width/2, .65*height);
 
   //food
-
   f1 = food1.get(0, 0, food1.width, food1.height);
   food100 = new Img(f1, width/2, .65*height);
 
@@ -307,6 +338,27 @@ function setup() {
   f7 = food7.get(0, 0, food7.width, food7.height);
   food700 = new Img(f7, width/2, .65*height);
 
+  //work
+  w1 = work1.get(0, 0, work1.width, work1.height);
+  work100 = new Img(w1, width/2, .65*height);
+
+  w2 = work2.get(0, 0, work2.width, work2.height);
+  work200 = new Img(w2, width/2, .65*height);
+
+  w3 = work3.get(0, 0, work3.width, work3.height);
+  work300 = new Img(w3, width/2, .65*height);
+
+  w4 = work4.get(0, 0, work4.width, work4.height);
+  work400 = new Img(w4, width/2, .65*height);
+
+  w5 = work5.get(0, 0, work5.width, work5.height);
+  work500 = new Img(w5, width/2, .65*height);
+
+  w6 = work6.get(0, 0, work6.width, work6.height);
+  work600 = new Img(w6, width/2, .65*height);
+
+  w7 = work7.get(0, 0, work7.width, work7.height);
+  work700 = new Img(w7, width/2, .65*height);
 
   //desk series
   d1 = desk1.get(0, 0, desk1.width, desk1.height);
@@ -343,7 +395,7 @@ function setup() {
   p5 = patrick5.get(0, 0, patrick5.width, patrick5.height);
   patrick500 = new Img(p5, width/2, .65*height);
 
-  //creating background for texture
+  //creating background wor texture
   for (var i = 0; i < numDots; i++) {
     var d = new Dot();
     dotArray.push(d);
@@ -443,22 +495,16 @@ function draw() {
     //several pictures, not just one
     if (photonumber == 1) {
       desk100.render();
-      // campus100.render();
     } else if (photonumber == 2) {
       desk200.render();
-      // campus200.render();
     } else if (photonumber == 3) {
       desk300.render();
-      // campus300.render();
     } else if (photonumber == 4 ){
       desk400.render();
-      // campus400.render();
     } else if (photonumber == 5) {
       desk500.render();
-      // campus500.render();
     } else if (photonumber == 6) {
       desk600.render();
-      // campus600.render();
     }
 
     ReturnButton();
@@ -484,6 +530,22 @@ function draw() {
     console.log("scenario 5");
   } else if (instance == 6) {
     whiteRect();
+
+    if (photonumber == 1) {
+      work100.render();
+    } else if (photonumber == 2) {
+      work200.render();
+    } else if (photonumber == 3) {
+      work300.render();
+    } else if (photonumber == 4 ){
+      work400.render();
+    } else if (photonumber == 5) {
+      work500.render();
+    } else if (photonumber == 6) {
+      work600.render();
+    } else if (photonumber == 7) {
+      work700.render();
+    }
 
     ReturnButton();
     Title(campusTitle);
