@@ -5,6 +5,13 @@ var desk3;
 var desk4;
 var desk5;
 var desk6;
+//patrick
+var patrick1;
+var patrick2;
+var patrick3;
+var patrick4;
+var patrick5;
+var patrick6;
 //food
 var food1;
 var food2;
@@ -17,6 +24,11 @@ var food7;
 var felix1;
 var felix2;
 var felix3;
+var felix4;
+var felix5;
+var felix6;
+var felix7;
+//campus
 var campus1;
 var campus2;
 var campus3;
@@ -61,9 +73,14 @@ var campus500;
 var campus600;
 var campus700;
 var campus800;
+//felix
 var felix100;
 var felix200;
 var felix300;
+var felix400;
+var felix500;
+var felix600;
+var felix700;
 //food
 var food100;
 var food200;
@@ -79,6 +96,13 @@ var desk300;
 var desk400;
 var desk500;
 var desk600;
+//patrick
+var patrick100;
+var patrick200;
+var patrick300;
+var patrick400;
+var patrick500;
+var patrick600;
 
 function preload() {
   //icons to click on
@@ -104,10 +128,20 @@ function preload() {
   food6 = loadImage("assets/food/20161202_203806.jpg");
   food7 = loadImage("assets/food/20161206_114639.jpg");
 
-  felix1 = loadImage("assets/20161119_122413.jpg");
-  felix2 = loadImage("assets/20161122_153336.jpg");
-  //felix3 = loadImage("assets/20161119_122413.jpg");
-  felix3 = loadImage("assets/20161129_094416resampled3.jpg");
+  felix1 = loadImage("assets/felix/20161119_122413.jpg");
+  felix2 = loadImage("assets/felix/20161122_153336.jpg");
+  felix3 = loadImage("assets/felix/20161129_094416resampled3.jpg");
+  felix4 = loadImage("assets/felix/20161201_101755.jpg");
+  felix5 = loadImage("assets/felix/20161202_090943.jpg");
+  felix6 = loadImage("assets/felix/20161202_173144.jpg");
+  felix7 = loadImage("assets/felix/20161202_202045.jpg");
+
+  patrick1 = loadImage("assets/patrick/20161128_201141.jpg");
+  patrick2 = loadImage("assets/patrick/20161129_231605.jpg");
+  patrick3 = loadImage("assets/patrick/20161203_202736.jpg");
+  patrick4 = loadImage("assets/patrick/20161205_090149.jpg");
+  patrick5 = loadImage("assets/patrick/20161206_194311.jpg");
+
   // campus1 = loadImage("assets/20161116_124905.jpg");
   // campus2 = loadImage("assets/20161115_105544.jpg");
   // campus3 = loadImage("assets/20161115_105607.jpg");
@@ -159,6 +193,16 @@ function setup() {
   felix1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
   felix2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
   felix3.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  felix4.resize(scaleFactor * felix4.width, scaleFactor * felix4.height);
+  felix5.resize(scaleFactor * felix5.width, scaleFactor * felix5.height);
+  felix6.resize(scaleFactor * felix6.width, scaleFactor * felix6.height);
+  felix7.resize(scaleFactor * felix7.width, scaleFactor * felix7.height);
+
+  patrick1.resize(scaleFactor * patrick1.width, scaleFactor * patrick1.height);
+  patrick2.resize(scaleFactor * patrick2.width, scaleFactor * patrick2.height);
+  patrick3.resize(scaleFactor * patrick3.width, scaleFactor * patrick3.height);
+  patrick4.resize(scaleFactor * patrick4.width, scaleFactor * patrick4.height);
+  patrick5.resize(scaleFactor * patrick5.width, scaleFactor * patrick5.height);
 
   // campus1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
   // campus2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
@@ -223,6 +267,18 @@ function setup() {
   fe3 = felix3.get(0, 0, felix3.width, felix3.height);
   felix300 = new Img(fe3, .1*width, .1*height);
 
+  fe4 = felix4.get(0, 0, felix4.width, felix4.height);
+  felix400 = new Img(fe4, .1*width, .1*height);
+
+  fe5 = felix5.get(0, 0, felix5.width, felix5.height);
+  felix500 = new Img(fe5, .1*width, .1*height);
+
+  fe6 = felix6.get(0, 0, felix6.width, felix6.height);
+  felix600 = new Img(fe6, .1*width, .1*height);
+
+  fe7 = felix7.get(0, 0, felix7.width, felix7.height);
+  felix700 = new Img(fe7, .1*width, .1*height);
+
   //food
 
   f1 = food1.get(0, 0, food1.width, food1.height);
@@ -265,6 +321,22 @@ function setup() {
 
   d6 = desk6.get(0, 0, desk6.width, desk6.height);
   desk600 = new Img(d6, .1*width, .1*height);
+
+  //patrick series
+  p1 = patrick1.get(0, 0, patrick1.width, patrick1.height);
+  patrick100 = new Img(p1, .1*width, .1*height);
+
+  p2 = patrick2.get(0, 0, patrick2.width, patrick2.height);
+  patrick200 = new Img(p2, .1*width, .1*height);
+
+  p3 = patrick3.get(0, 0, patrick3.width, patrick3.height);
+  patrick300 = new Img(p3, .1*width, .1*height);
+
+  p4 = patrick4.get(0, 0, patrick4.width, patrick4.height);
+  patrick400 = new Img(p4, .1*width, .1*height);
+
+  p5 = patrick5.get(0, 0, patrick5.width, patrick5.height);
+  patrick500 = new Img(p5, .1*width, .1*height);
 
   //creating background for texture
   for (var i = 0; i < numDots; i++) {
@@ -327,19 +399,15 @@ function draw() {
     } else if (photonumber == 2) {
       felix200.render();
     } else if (photonumber == 3) {
-      console.log(photonumber);
-      //felix300.render();
+      felix300.render();
     } else if (photonumber == 4 ){
-      console.log(photonumber);
-      //felix400.render();
+      felix400.render();
     } else if (photonumber == 5) {
-      //felix500.render();
+      felix500.render();
     } else if (photonumber == 6) {
-      //felix600.render();
+      felix600.render();
     } else if (photonumber == 7) {
-      //felix700.render();
-    } else if (photonumber == 8) {
-      //felix800.render();
+      felix700.render();
     }
 
     ReturnButton();
@@ -385,6 +453,18 @@ function draw() {
     Title(deskTitle);
   } else if (instance == 5) {
     whiteRect();
+
+    if (photonumber == 1) {
+      patrick100.render();
+    } else if (photonumber == 2) {
+      patrick200.render();
+    } else if (photonumber == 3) {
+      patrick300.render();
+    } else if (photonumber == 4 ){
+      patrick400.render();
+    } else if (photonumber == 5) {
+      patrick500.render();
+    }
 
     ReturnButton();
     Title(patrickTitle);
@@ -537,7 +617,7 @@ function Title(titolo) {
 }
 
 function keyPressed(){
-  if (keyCode === UP_ARROW && photonumber < 9) {
+  if (keyCode === UP_ARROW && photonumber < 7) {
    photonumber++;
  } else if (keyCode === DOWN_ARROW && photonumber > 1) {
    photonumber--;
