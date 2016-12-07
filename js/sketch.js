@@ -5,8 +5,15 @@ var desk3;
 var desk4;
 var desk5;
 var desk6;
+//food
 var food1;
 var food2;
+var food3;
+var food4;
+var food5;
+var food6;
+var food7;
+//felix
 var felix1;
 var felix2;
 var felix3;
@@ -57,8 +64,15 @@ var campus800;
 var felix100;
 var felix200;
 var felix300;
+//food
 var food100;
 var food200;
+var food300;
+var food400;
+var food500;
+var food600;
+var food700;
+//desk
 var desk100;
 var desk200;
 var desk300;
@@ -82,8 +96,13 @@ function preload() {
   desk5 = loadImage("assets/20161128_094255.jpg");
   desk6 = loadImage("assets/20161128_175727.jpg");
 
-  food1 = loadImage("assets/20161121_115735.jpg");
-  food2 = loadImage("assets/20161121_205016.jpg");
+  food1 = loadImage("assets/food/20161121_115735.jpg");
+  food2 = loadImage("assets/food/20161121_205016.jpg");
+  food3 = loadImage("assets/food/20161130_124520.jpg");
+  food4 = loadImage("assets/food/20161201_121108.jpg");
+  food5 = loadImage("assets/food/20161202_114900.jpg");
+  food6 = loadImage("assets/food/20161202_203806.jpg");
+  food7 = loadImage("assets/food/20161206_114639.jpg");
 
   felix1 = loadImage("assets/20161119_122413.jpg");
   felix2 = loadImage("assets/20161122_153336.jpg");
@@ -122,19 +141,23 @@ function setup() {
   boardIcon.resize(resize, resize);
 
   //resizing album images
-  desk1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  desk2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  desk3.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  desk4.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  desk5.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  desk6.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  desk1.resize(scaleFactor * desk1.width, scaleFactor * desk1.height);
+  desk2.resize(scaleFactor * desk2.width, scaleFactor * desk2.height);
+  desk3.resize(scaleFactor * desk3.width, scaleFactor * desk3.height);
+  desk4.resize(scaleFactor * desk4.width, scaleFactor * desk4.height);
+  desk5.resize(scaleFactor * desk5.width, scaleFactor * desk5.height);
+  desk6.resize(scaleFactor * desk6.width, scaleFactor * desk6.height);
 
   food1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
   food2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  food3.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  food4.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  food5.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  food6.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  food7.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
 
   felix1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
   felix2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-
   felix3.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
 
   // campus1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
@@ -200,11 +223,29 @@ function setup() {
   fe3 = felix3.get(0, 0, felix3.width, felix3.height);
   felix300 = new Img(fe3, .1*width, .1*height);
 
+  //food
+
   f1 = food1.get(0, 0, food1.width, food1.height);
   food100 = new Img(f1, .1*width, .1*height);
 
   f2 = food2.get(0, 0, food2.width, food2.height);
   food200 = new Img(f2, .1*width, .1*height);
+
+  f3 = food3.get(0, 0, food3.width, food3.height);
+  food300 = new Img(f3, .1*width, .1*height);
+
+  f4 = food4.get(0, 0, food4.width, food4.height);
+  food400 = new Img(f4, .1*width, .1*height);
+
+  f5 = food5.get(0, 0, food5.width, food5.height);
+  food500 = new Img(f5, .1*width, .1*height);
+
+  f6 = food6.get(0, 0, food6.width, food6.height);
+  food600 = new Img(f6, .1*width, .1*height);
+
+  f7 = food7.get(0, 0, food7.width, food7.height);
+  food700 = new Img(f7, .1*width, .1*height);
+
 
   //desk series
   d1 = desk1.get(0, 0, desk1.width, desk1.height);
@@ -286,17 +327,19 @@ function draw() {
     } else if (photonumber == 2) {
       felix200.render();
     } else if (photonumber == 3) {
-      felix300.render();
+      console.log(photonumber);
+      //felix300.render();
     } else if (photonumber == 4 ){
-      // felix400.render();
+      console.log(photonumber);
+      //felix400.render();
     } else if (photonumber == 5) {
-      // felix500.render();
+      //felix500.render();
     } else if (photonumber == 6) {
-      // felix600.render();
+      //felix600.render();
     } else if (photonumber == 7) {
-      // felix700.render();
+      //felix700.render();
     } else if (photonumber == 8) {
-      // felix800.render();
+      //felix800.render();
     }
 
     ReturnButton();
@@ -309,17 +352,15 @@ function draw() {
     } else if (photonumber == 2) {
       food200.render();
     } else if (photonumber == 3) {
-      //food300.render();
+      food300.render();
     } else if (photonumber == 4 ){
-      // food400.render();
+      food400.render();
     } else if (photonumber == 5) {
-      // food500.render();
+      food500.render();
     } else if (photonumber == 6) {
-      // food600.render();
+      food600.render();
     } else if (photonumber == 7) {
-      // food700.render();
-    } else if (photonumber == 8) {
-      // food800.render();
+      food700.render();
     }
 
     ReturnButton();
@@ -353,7 +394,7 @@ function draw() {
     whiteRect();
 
     ReturnButton();
-    Title(schoolTitle);
+    Title(campusTitle);
 
     console.log("scenario 6");
   }
