@@ -113,12 +113,12 @@ function preload() {
   patrickIcon = loadImage("assets/test5.png");
   boardIcon = loadImage("assets/test6.png");
   //the desk
-  desk1 = loadImage("assets/20161119_001531.jpg");
-  desk2 = loadImage("assets/20161119_114337.jpg");
-  desk3 = loadImage("assets/20161122_125345.jpg");
-  desk4 = loadImage("assets/20161127_231726.jpg");
-  desk5 = loadImage("assets/20161128_094255.jpg");
-  desk6 = loadImage("assets/20161128_175727.jpg");
+  desk1 = loadImage("assets/desk/20161118_001612.jpg");
+  desk2 = loadImage("assets/desk/20161119_001531.jpg");
+  desk3 = loadImage("assets/desk/20161119_114337.jpg");
+  desk4 = loadImage("assets/desk/20161122_125345.jpg");
+  desk5 = loadImage("assets/desk/20161127_231726.jpg");
+  desk6 = loadImage("assets/desk/20161128_094255.jpg");
 
   food1 = loadImage("assets/food/20161121_115735.jpg");
   food2 = loadImage("assets/food/20161121_205016.jpg");
@@ -235,108 +235,108 @@ function setup() {
   //CREATING IMAGES
 
   // nu1 = campus1.get(0, 0, campus1.width, campus1.height);
-  // campus100 = new Img(nu1, .1*width, .1*height);
+  // campus100 = new Img(nu1, width/2, .65*height);
 
   // nu2 = campus2.get(0, 0, campus2.width, campus2.height);
-  // campus200 = new Img(nu2, .1*width, .1*height);
+  // campus200 = new Img(nu2, width/2, .65*height);
 
   // nu3 = campus3.get(0, 0, campus3.width, campus3.height);
-  // campus300 = new Img(nu3, .1*width, .1*height);
+  // campus300 = new Img(nu3, width/2, .65*height);
 
   // nu4 = campus4.get(0, 0, campus4.width, campus4.height);
-  // campus400 = new Img(nu4, .1*width, .1*height);
+  // campus400 = new Img(nu4, width/2, .65*height);
 
   // nu5 = campus5.get(0, 0, campus5.width, campus5.height);
-  // campus500 = new Img(nu5, .1*width, .1*height);
+  // campus500 = new Img(nu5, width/2, .65*height);
 
   // nu6 = campus6.get(0, 0, campus6.width, campus6.height);
-  // campus600 = new Img(nu6, .1*width, .1*height);
+  // campus600 = new Img(nu6, width/2, .65*height);
 
   // nu7 = campus7.get(0, 0, campus7.width, campus7.height);
-  // campus700 = new Img(nu7, .1*width, .1*height);
+  // campus700 = new Img(nu7, width/2, .65*height);
 
   // nu8 = campus8.get(0, 0, campus8.width, campus8.height);
-  // campus800 = new Img(nu8, .1*width, .1*height);
+  // campus800 = new Img(nu8, width/2, .65*height);
 
   fe1 = felix1.get(0, 0, felix1.width, felix1.height);
-  felix100 = new Img(fe1, .1*width, .1*height);
+  felix100 = new Img(fe1, width/2, .65*height);
 
   fe2 = felix2.get(0, 0, felix2.width, felix2.height);
-  felix200 = new Img(fe2, .1*width, .1*height);
+  felix200 = new Img(fe2, width/2, .65*height);
 
   fe3 = felix3.get(0, 0, felix3.width, felix3.height);
-  felix300 = new Img(fe3, .1*width, .1*height);
+  felix300 = new Img(fe3, width/2, .65*height);
 
   fe4 = felix4.get(0, 0, felix4.width, felix4.height);
-  felix400 = new Img(fe4, .1*width, .1*height);
+  felix400 = new Img(fe4, width/2, .65*height);
 
   fe5 = felix5.get(0, 0, felix5.width, felix5.height);
-  felix500 = new Img(fe5, .1*width, .1*height);
+  felix500 = new Img(fe5, width/2, .65*height);
 
   fe6 = felix6.get(0, 0, felix6.width, felix6.height);
-  felix600 = new Img(fe6, .1*width, .1*height);
+  felix600 = new Img(fe6, width/2, .65*height);
 
   fe7 = felix7.get(0, 0, felix7.width, felix7.height);
-  felix700 = new Img(fe7, .1*width, .1*height);
+  felix700 = new Img(fe7, width/2, .65*height);
 
   //food
 
   f1 = food1.get(0, 0, food1.width, food1.height);
-  food100 = new Img(f1, .1*width, .1*height);
+  food100 = new Img(f1, width/2, .65*height);
 
   f2 = food2.get(0, 0, food2.width, food2.height);
-  food200 = new Img(f2, .1*width, .1*height);
+  food200 = new Img(f2, width/2, .65*height);
 
   f3 = food3.get(0, 0, food3.width, food3.height);
-  food300 = new Img(f3, .1*width, .1*height);
+  food300 = new Img(f3, width/2, .65*height);
 
   f4 = food4.get(0, 0, food4.width, food4.height);
-  food400 = new Img(f4, .1*width, .1*height);
+  food400 = new Img(f4, width/2, .65*height);
 
   f5 = food5.get(0, 0, food5.width, food5.height);
-  food500 = new Img(f5, .1*width, .1*height);
+  food500 = new Img(f5, width/2, .65*height);
 
   f6 = food6.get(0, 0, food6.width, food6.height);
-  food600 = new Img(f6, .1*width, .1*height);
+  food600 = new Img(f6, width/2, .65*height);
 
   f7 = food7.get(0, 0, food7.width, food7.height);
-  food700 = new Img(f7, .1*width, .1*height);
+  food700 = new Img(f7, width/2, .65*height);
 
 
   //desk series
   d1 = desk1.get(0, 0, desk1.width, desk1.height);
-  desk100 = new Img(d1, .1*width, .1*height);
+  desk100 = new Img(d1, width/2, .65*height);
 
   d2 = desk2.get(0, 0, desk2.width, desk2.height);
-  desk200 = new Img(d2, .1*width, .1*height);
+  desk200 = new Img(d2, width/2, .65*height);
 
   d3 = desk3.get(0, 0, desk3.width, desk3.height);
-  desk300 = new Img(d3, .1*width, .1*height);
+  desk300 = new Img(d3, width/2, .65*height);
 
   d4 = desk4.get(0, 0, desk4.width, desk4.height);
-  desk400 = new Img(d4, .1*width, .1*height);
+  desk400 = new Img(d4, width/2, .65*height);
 
   d5 = desk5.get(0, 0, desk5.width, desk5.height);
-  desk500 = new Img(d5, .1*width, .1*height);
+  desk500 = new Img(d5, width/2, .6*height);
 
   d6 = desk6.get(0, 0, desk6.width, desk6.height);
-  desk600 = new Img(d6, .1*width, .1*height);
+  desk600 = new Img(d6, width/2, .65*height);
 
   //patrick series
   p1 = patrick1.get(0, 0, patrick1.width, patrick1.height);
-  patrick100 = new Img(p1, .1*width, .1*height);
+  patrick100 = new Img(p1, width/2, .65*height);
 
   p2 = patrick2.get(0, 0, patrick2.width, patrick2.height);
-  patrick200 = new Img(p2, .1*width, .1*height);
+  patrick200 = new Img(p2, width/2, .65*height);
 
   p3 = patrick3.get(0, 0, patrick3.width, patrick3.height);
-  patrick300 = new Img(p3, .1*width, .1*height);
+  patrick300 = new Img(p3, width/2, .65*height);
 
   p4 = patrick4.get(0, 0, patrick4.width, patrick4.height);
-  patrick400 = new Img(p4, .1*width, .1*height);
+  patrick400 = new Img(p4, width/2, .65*height);
 
   p5 = patrick5.get(0, 0, patrick5.width, patrick5.height);
-  patrick500 = new Img(p5, .1*width, .1*height);
+  patrick500 = new Img(p5, width/2, .65*height);
 
   //creating background for texture
   for (var i = 0; i < numDots; i++) {
@@ -436,19 +436,26 @@ function draw() {
   } else if (instance == 4){
     whiteRect();
     //several pictures, not just one
+    if (photonumber == 1) {
+      desk100.render();
+      // campus100.render();
+    } else if (photonumber == 2) {
+      desk200.render();
+      // campus200.render();
+    } else if (photonumber == 3) {
+      desk300.render();
+      // campus300.render();
+    } else if (photonumber == 4 ){
+      desk400.render();
+      // campus400.render();
+    } else if (photonumber == 5) {
+      desk500.render();
+      // campus500.render();
+    } else if (photonumber == 6) {
+      desk600.render();
+      // campus600.render();
+    }
 
-    desk100.render();
-
-    desk200.render();
-
-    desk300.render();
-
-    desk400.render();
-
-    desk500.render();
-
-    desk600.render();
-    // console.log("scenario 4");
     ReturnButton();
     Title(deskTitle);
   } else if (instance == 5) {
@@ -543,9 +550,11 @@ function whiteRect() {
 //will be replaced with a nice icon or text
 function ReturnButton() {
   push();
-  rectMode(CENTER);
-  fill(100,0,100);
-  rect(.9*width, .07*height, 50, 50);
+  fill('#000000');
+  textFont(myFont);
+  imageMode(CENTER);
+  textSize(20);
+  text("Home", .9*width, .07*height, 50, 50);
   pop();
 }
 
@@ -569,10 +578,10 @@ Pic.prototype.render = function(dx1, dx2, dy1, dy2) {
 }
 
 Img.prototype.render = function() {
-  // push();
-  // imageMode(CENTER);
+  push();
+  imageMode(CENTER);
   image(this.image, this.x, this.y);
-  // pop();
+  pop();
 }
 
 Dot.prototype.render = function() {
