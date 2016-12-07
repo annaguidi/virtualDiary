@@ -33,6 +33,11 @@ var campus1;
 var campus2;
 var campus3;
 var campus4;
+var campus5;
+var campus6;
+var campus7;
+var campus8;
+
 var deskIcon;
 var felixIcon;
 var lunchIcon;
@@ -113,13 +118,13 @@ function preload() {
   patrickIcon = loadImage("assets/test5.png");
   boardIcon = loadImage("assets/test6.png");
   //the desk
-  desk1 = loadImage("assets/desk/20161118_001612.jpg");
-  desk2 = loadImage("assets/desk/20161119_001531.jpg");
-  desk3 = loadImage("assets/desk/20161119_114337.jpg");
-  desk4 = loadImage("assets/desk/20161122_125345.jpg");
-  desk5 = loadImage("assets/desk/20161127_231726.jpg");
-  desk6 = loadImage("assets/desk/20161128_094255.jpg");
-
+  desk1 = loadImage("assets/desk/20161201_235346.jpg");
+  desk2 = loadImage("assets/desk/20161203_231543_2.jpg");
+  desk3 = loadImage("assets/desk/20161128_175727_1.jpg");
+  desk4 = loadImage("assets/desk/20161122_125345_1.jpg");
+  desk5 = loadImage("assets/desk/20161128_094254_1.jpg");
+  desk6 = loadImage("assets/desk/20161127_231726_1.jpg");
+  //food
   food1 = loadImage("assets/food/20161121_115735.jpg");
   food2 = loadImage("assets/food/20161121_205016.jpg");
   food3 = loadImage("assets/food/20161130_124520.jpg");
@@ -127,7 +132,7 @@ function preload() {
   food5 = loadImage("assets/food/20161202_114900.jpg");
   food6 = loadImage("assets/food/20161202_203806.jpg");
   food7 = loadImage("assets/food/20161206_114639.jpg");
-
+  //felix
   felix1 = loadImage("assets/felix/20161119_122413.jpg");
   felix2 = loadImage("assets/felix/20161122_153336.jpg");
   felix3 = loadImage("assets/felix/20161129_094416resampled3.jpg");
@@ -135,20 +140,20 @@ function preload() {
   felix5 = loadImage("assets/felix/20161202_090943.jpg");
   felix6 = loadImage("assets/felix/20161202_173144.jpg");
   felix7 = loadImage("assets/felix/20161202_202045.jpg");
-
+  //patrick
   patrick1 = loadImage("assets/patrick/20161128_201141.jpg");
   patrick2 = loadImage("assets/patrick/20161129_231605.jpg");
   patrick3 = loadImage("assets/patrick/20161203_202736.jpg");
   patrick4 = loadImage("assets/patrick/20161205_090149.jpg");
   patrick5 = loadImage("assets/patrick/20161206_194311.jpg");
-
-  // campus1 = loadImage("assets/20161116_124905.jpg");
-  // campus2 = loadImage("assets/20161115_105544.jpg");
-  // campus3 = loadImage("assets/20161115_105607.jpg");
-  // campus4 = loadImage("assets/20161114_130343.jpg");
-  // campus5 = loadImage("assets/20161113_153944.jpg");
-  // campus6 = loadImage("assets/20161113_153856.jpg");
-  // campus7 = loadImage("assets/20161108_152951.jpg");
+  //campus
+  campus1 = loadImage("assets/campus/20161113_153856.jpg");
+  campus2 = loadImage("assets/campus/20161113_153944.jpg");
+  campus3 = loadImage("assets/campus/20161114_130343.jpg");
+  campus4 = loadImage("assets/campus/20161115_105544.jpg");
+  campus5 = loadImage("assets/campus/20161115_105607.jpg");
+  campus6 = loadImage("assets/campus/20161116_124905.jpg");
+  campus7 = loadImage("assets/campus/20161119_121906.jpg");
   // campus8 = loadImage("assets/20161107_163306.jpg");
   myFont = loadFont("assets/MODERNE_SANS.ttf");
 }
@@ -204,13 +209,13 @@ function setup() {
   patrick4.resize(scaleFactor * patrick4.width, scaleFactor * patrick4.height);
   patrick5.resize(scaleFactor * patrick5.width, scaleFactor * patrick5.height);
 
-  // campus1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  // campus2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  // campus3.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  // campus4.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  // campus5.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  // campus6.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
-  // campus7.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
+  campus1.resize(scaleFactor * campus1.width, scaleFactor * campus1.height);
+  campus2.resize(scaleFactor * campus2.width, scaleFactor * campus2.height);
+  campus3.resize(scaleFactor * campus3.width, scaleFactor * campus3.height);
+  campus4.resize(scaleFactor * campus4.width, scaleFactor * campus4.height);
+  campus5.resize(scaleFactor * campus5.width, scaleFactor * campus5.height);
+  campus6.resize(scaleFactor * campus6.width, scaleFactor * campus6.height);
+  campus7.resize(scaleFactor * campus7.width, scaleFactor * campus7.height);
   // campus8.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
 
   //creating icons
@@ -234,26 +239,26 @@ function setup() {
 
   //CREATING IMAGES
 
-  // nu1 = campus1.get(0, 0, campus1.width, campus1.height);
-  // campus100 = new Img(nu1, width/2, .65*height);
+  nu1 = campus1.get(0, 0, campus1.width, campus1.height);
+  campus100 = new Img(nu1, width/2, .65*height);
 
-  // nu2 = campus2.get(0, 0, campus2.width, campus2.height);
-  // campus200 = new Img(nu2, width/2, .65*height);
+  nu2 = campus2.get(0, 0, campus2.width, campus2.height);
+  campus200 = new Img(nu2, width/2, .65*height);
 
-  // nu3 = campus3.get(0, 0, campus3.width, campus3.height);
-  // campus300 = new Img(nu3, width/2, .65*height);
+  nu3 = campus3.get(0, 0, campus3.width, campus3.height);
+  campus300 = new Img(nu3, width/2, .65*height);
 
-  // nu4 = campus4.get(0, 0, campus4.width, campus4.height);
-  // campus400 = new Img(nu4, width/2, .65*height);
+  nu4 = campus4.get(0, 0, campus4.width, campus4.height);
+  campus400 = new Img(nu4, width/2, .62*height);
 
-  // nu5 = campus5.get(0, 0, campus5.width, campus5.height);
-  // campus500 = new Img(nu5, width/2, .65*height);
+  nu5 = campus5.get(0, 0, campus5.width, campus5.height);
+  campus500 = new Img(nu5, width/2, .58*height);
 
-  // nu6 = campus6.get(0, 0, campus6.width, campus6.height);
-  // campus600 = new Img(nu6, width/2, .65*height);
+  nu6 = campus6.get(0, 0, campus6.width, campus6.height);
+  campus600 = new Img(nu6, width/2, .65*height);
 
-  // nu7 = campus7.get(0, 0, campus7.width, campus7.height);
-  // campus700 = new Img(nu7, width/2, .65*height);
+  nu7 = campus7.get(0, 0, campus7.width, campus7.height);
+  campus700 = new Img(nu7, width/2, .65*height);
 
   // nu8 = campus8.get(0, 0, campus8.width, campus8.height);
   // campus800 = new Img(nu8, width/2, .65*height);
@@ -305,22 +310,22 @@ function setup() {
 
   //desk series
   d1 = desk1.get(0, 0, desk1.width, desk1.height);
-  desk100 = new Img(d1, width/2, .65*height);
+  desk100 = new Img(d1, width/2, .6*height);
 
   d2 = desk2.get(0, 0, desk2.width, desk2.height);
-  desk200 = new Img(d2, width/2, .65*height);
+  desk200 = new Img(d2, width/2, .57*height);
 
   d3 = desk3.get(0, 0, desk3.width, desk3.height);
-  desk300 = new Img(d3, width/2, .65*height);
+  desk300 = new Img(d3, width/2, .6*height);
 
   d4 = desk4.get(0, 0, desk4.width, desk4.height);
-  desk400 = new Img(d4, width/2, .65*height);
+  desk400 = new Img(d4, width/2, .56*height);
 
   d5 = desk5.get(0, 0, desk5.width, desk5.height);
-  desk500 = new Img(d5, width/2, .6*height);
+  desk500 = new Img(d5, width/2, .55*height);
 
   d6 = desk6.get(0, 0, desk6.width, desk6.height);
-  desk600 = new Img(d6, width/2, .65*height);
+  desk600 = new Img(d6, width/2, .57*height);
 
   //patrick series
   p1 = patrick1.get(0, 0, patrick1.width, patrick1.height);
@@ -371,19 +376,19 @@ function draw() {
     whiteRect();
 
     if (photonumber == 1) {
-      // campus100.render();
+      campus100.render();
     } else if (photonumber == 2) {
-      // campus200.render();
+      campus200.render();
     } else if (photonumber == 3) {
-      // campus300.render();
+      campus300.render();
     } else if (photonumber == 4 ){
-      // campus400.render();
+      campus400.render();
     } else if (photonumber == 5) {
-      // campus500.render();
+      campus500.render();
     } else if (photonumber == 6) {
-      // campus600.render();
+      campus600.render();
     } else if (photonumber == 7) {
-      // campus700.render();
+      campus700.render();
     } else if (photonumber == 8) {
       // campus800.render();
     }
