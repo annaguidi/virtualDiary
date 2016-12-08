@@ -8,6 +8,9 @@ var desk6;
 var desk7;
 var desk8;
 var desk9;
+var desk10;
+var desk11;
+var desk12;
 //patrick
 var patrick1;
 var patrick2;
@@ -15,6 +18,7 @@ var patrick3;
 var patrick4;
 var patrick5;
 var patrick6;
+var patrick7;
 //food
 var food1;
 var food2;
@@ -122,7 +126,10 @@ var desk500;
 var desk600;
 var desk700;
 var desk800;
-var desk900;
+var desk1000;
+var desk1100;
+var desk1200;
+var desk1300;
 //patrick
 var patrick100;
 var patrick200;
@@ -130,6 +137,7 @@ var patrick300;
 var patrick400;
 var patrick500;
 var patrick600;
+var patrick700;
 
 function preload() {
   //icons to click on
@@ -149,6 +157,9 @@ function preload() {
   desk8 = loadImage("assets/desk/20161119_001528.jpg");
   desk9 = loadImage("assets/desk/20161119_114341.jpg");
   desk7 = loadImage("assets/desk/20161203_231545.jpg");
+  desk10 = loadImage("assets/desk/new_desk/20161129_202722.jpg");
+  desk11 = loadImage("assets/desk/new_desk/20161202_201330.jpg");
+  desk12 = loadImage("assets/desk/new_desk/20161205_232734.jpg");
   //food
   food1 = loadImage("assets/food/20161121_115735.jpg");
   food2 = loadImage("assets/food/20161121_205016.jpg");
@@ -179,6 +190,8 @@ function preload() {
   patrick3 = loadImage("assets/patrick/20161203_202736.jpg");
   patrick4 = loadImage("assets/patrick/20161205_090149.jpg");
   patrick5 = loadImage("assets/patrick/20161206_194311.jpg");
+  patrick6 = loadImage("assets/patrick/20161018_214429.jpg");
+  patrick7 = loadImage("assets/patrick/20161207_191522.jpg");
   //campus
   campus1 = loadImage("assets/campus/20161113_153856.jpg");
   campus2 = loadImage("assets/campus/20161113_153944.jpg");
@@ -222,6 +235,9 @@ function setup() {
   desk7.resize(scaleFactor * desk7.width, scaleFactor * desk7.height);
   desk8.resize(scaleFactor * desk8.width, scaleFactor * desk8.height);
   desk9.resize(scaleFactor * desk9.width, scaleFactor * desk9.height);
+  desk10.resize(scaleFactor * desk10.width, scaleFactor * desk10.height);
+  desk11.resize(scaleFactor * desk11.width, scaleFactor * desk11.height);
+  desk12.resize(scaleFactor * desk12.width, scaleFactor * desk12.height);
 
   food1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
   food2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
@@ -244,6 +260,8 @@ function setup() {
   patrick3.resize(scaleFactor * patrick3.width, scaleFactor * patrick3.height);
   patrick4.resize(scaleFactor * patrick4.width, scaleFactor * patrick4.height);
   patrick5.resize(scaleFactor * patrick5.width, scaleFactor * patrick5.height);
+  patrick6.resize(scaleFactor * patrick6.width, scaleFactor * patrick6.height);
+  patrick7.resize(scaleFactor * patrick7.width, scaleFactor * patrick7.height);
 
   campus1.resize(scaleFactor * campus1.width, scaleFactor * campus1.height);
   campus2.resize(scaleFactor * campus2.width, scaleFactor * campus2.height);
@@ -400,6 +418,15 @@ function setup() {
   d9 = desk9.get(0, 0, desk9.width, desk9.height);
   desk900 = new Img(d9, width/2, .57*height);
 
+  d10 = desk10.get(0, 0, desk10.width, desk10.height);
+  desk1000 = new Img(d10, width/2, .59*height);
+
+  d11 = desk11.get(0, 0, desk11.width, desk11.height);
+  desk1100 = new Img(d11, width/2, .62*height);
+
+  d12 = desk12.get(0, 0, desk12.width, desk12.height);
+  desk1200 = new Img(d12, width/2, .57*height);
+
   //patrick series
   p1 = patrick1.get(0, 0, patrick1.width, patrick1.height);
   patrick100 = new Img(p1, width/2, .65*height);
@@ -415,6 +442,12 @@ function setup() {
 
   p5 = patrick5.get(0, 0, patrick5.width, patrick5.height);
   patrick500 = new Img(p5, width/2, .65*height);
+
+  p6 = patrick6.get(0, 0, patrick6.width, patrick6.height);
+  patrick600 = new Img(p6, width/2, .65*height);
+
+  p7 = patrick7.get(0, 0, patrick7.width, patrick7.height);
+  patrick700 = new Img(p7, width/2, .65*height);
 
   //creating background wor texture
   for (var i = 0; i < numDots; i++) {
@@ -515,23 +548,29 @@ function draw() {
     whiteRect();
     //several pictures, not just one
     if (photonumber == 1) {
-      desk100.render();
-    } else if (photonumber == 2) {
       desk200.render();
+    } else if (photonumber == 2) {
+      desk800.render();
     } else if (photonumber == 3) {
-      desk300.render();
+      desk900.render();
     } else if (photonumber == 4 ){
       desk400.render();
     } else if (photonumber == 5) {
-      desk500.render();
-    } else if (photonumber == 6) {
       desk600.render();
+    } else if (photonumber == 6) {
+      desk500.render();
     } else if (photonumber == 7) {
-      desk700.render();
+      desk300.render();
     } else if (photonumber == 8) {
-      desk800.render();
+      desk100.render();
     } else if (photonumber == 9) {
-      desk900.render();
+      desk1000.render();
+    } else if (photonumber == 10) {
+      desk1100.render();
+    } else if (photonumber == 11) {
+      desk700.render();
+    } else if (photonumber == 12) {
+      desk1200.render();
     }
 
     ReturnButton();
@@ -549,6 +588,10 @@ function draw() {
       patrick400.render();
     } else if (photonumber == 5) {
       patrick500.render();
+    } else if (photonumber == 6) {
+      patrick600.render();
+    } else if (photonumber == 7) {
+      patrick700.render();
     }
 
     ReturnButton();
@@ -723,7 +766,7 @@ function keyPressed(){
   if (keyCode === UP_ARROW) {
     if (instance != 4 && instance != 0 && photonumber < 7) {
       photonumber++;
-    } else if (instance == 4 && photonumber < 9) {
+    } else if (instance == 4 && photonumber < 12) {
       photonumber++;
     }
  } else if (keyCode === DOWN_ARROW && photonumber > 1) {
