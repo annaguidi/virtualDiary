@@ -5,6 +5,9 @@ var desk3;
 var desk4;
 var desk5;
 var desk6;
+var desk7;
+var desk8;
+var desk9;
 //patrick
 var patrick1;
 var patrick2;
@@ -63,7 +66,7 @@ var myFont;
 var title = "Virtual Diary Project"
 var description = "The Virtual Diary Project was originally meant to be a small package of daily, fundamental experiences I could share with my friends to show them my lifestyle in the US. Its purpose is to take on a perspective that cannot be conveyed through conventional social media: the banal, the day-to-day, the routine, the authentic. I have picked six daily motifs that provide routine and a certain stability to my day's schedule. To add some meaningful context, I have juxtaposed several images of that motif on the same page. Enjoy!"
 var felixTitle = "Felix - Cornerstore"
-var foodTitle = "Lunch (Dinner)"
+var foodTitle = "Lunch/Dinner"
 var patrickTitle = "Patrick"
 var deskTitle = "Stress Indicator"
 var schoolTitle = "The Bubble"
@@ -117,6 +120,9 @@ var desk300;
 var desk400;
 var desk500;
 var desk600;
+var desk700;
+var desk800;
+var desk900;
 //patrick
 var patrick100;
 var patrick200;
@@ -134,12 +140,15 @@ function preload() {
   patrickIcon = loadImage("assets/test5.png");
   boardIcon = loadImage("assets/test6.png");
   //the desk
-  desk1 = loadImage("assets/desk/20161201_235346.jpg");
-  desk2 = loadImage("assets/desk/20161203_231543_2.jpg");
-  desk3 = loadImage("assets/desk/20161128_175727_1.jpg");
+  desk1 = loadImage("assets/desk/new_desk/20161201_235346.jpg");
+  desk2 = loadImage("assets/desk/new_desk/20161118_001612.jpg");
+  desk3 = loadImage("assets/desk/20161128_175727_4.jpg");
   desk4 = loadImage("assets/desk/20161122_125345_1.jpg");
   desk5 = loadImage("assets/desk/20161128_094254_1.jpg");
   desk6 = loadImage("assets/desk/20161127_231726_1.jpg");
+  desk8 = loadImage("assets/desk/20161119_001528.jpg");
+  desk9 = loadImage("assets/desk/20161119_114341.jpg");
+  desk7 = loadImage("assets/desk/20161203_231545.jpg");
   //food
   food1 = loadImage("assets/food/20161121_115735.jpg");
   food2 = loadImage("assets/food/20161121_205016.jpg");
@@ -210,6 +219,9 @@ function setup() {
   desk4.resize(scaleFactor * desk4.width, scaleFactor * desk4.height);
   desk5.resize(scaleFactor * desk5.width, scaleFactor * desk5.height);
   desk6.resize(scaleFactor * desk6.width, scaleFactor * desk6.height);
+  desk7.resize(scaleFactor * desk7.width, scaleFactor * desk7.height);
+  desk8.resize(scaleFactor * desk8.width, scaleFactor * desk8.height);
+  desk9.resize(scaleFactor * desk9.width, scaleFactor * desk9.height);
 
   food1.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
   food2.resize(scaleFactor * felix3.width, scaleFactor * felix3.height);
@@ -368,7 +380,7 @@ function setup() {
   desk200 = new Img(d2, width/2, .57*height);
 
   d3 = desk3.get(0, 0, desk3.width, desk3.height);
-  desk300 = new Img(d3, width/2, .6*height);
+  desk300 = new Img(d3, width/2, .56*height);
 
   d4 = desk4.get(0, 0, desk4.width, desk4.height);
   desk400 = new Img(d4, width/2, .56*height);
@@ -378,6 +390,15 @@ function setup() {
 
   d6 = desk6.get(0, 0, desk6.width, desk6.height);
   desk600 = new Img(d6, width/2, .57*height);
+
+  d7 = desk7.get(0, 0, desk7.width, desk7.height);
+  desk700 = new Img(d7, width/2, .57*height);
+
+  d8 = desk8.get(0, 0, desk8.width, desk8.height);
+  desk800 = new Img(d8, width/2, .57*height);
+
+  d9 = desk9.get(0, 0, desk9.width, desk9.height);
+  desk900 = new Img(d9, width/2, .57*height);
 
   //patrick series
   p1 = patrick1.get(0, 0, patrick1.width, patrick1.height);
@@ -505,6 +526,12 @@ function draw() {
       desk500.render();
     } else if (photonumber == 6) {
       desk600.render();
+    } else if (photonumber == 7) {
+      desk700.render();
+    } else if (photonumber == 8) {
+      desk800.render();
+    } else if (photonumber == 9) {
+      desk900.render();
     }
 
     ReturnButton();
@@ -693,8 +720,12 @@ function Title(titolo) {
 }
 
 function keyPressed(){
-  if (keyCode === UP_ARROW && photonumber < 7) {
-   photonumber++;
+  if (keyCode === UP_ARROW) {
+    if (instance != 4 && instance != 0 && photonumber < 7) {
+      photonumber++;
+    } else if (instance == 4 && photonumber < 9) {
+      photonumber++;
+    }
  } else if (keyCode === DOWN_ARROW && photonumber > 1) {
    photonumber--;
   }
